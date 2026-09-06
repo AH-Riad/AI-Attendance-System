@@ -5,7 +5,10 @@ def home_screen():
     col1, col2 = st.columns(2)
     
     with col1:
-        st.button('Teacher Portal')
-        
+        if st.button('Teacher Portal'):
+            st.session_state['login_type'] = 'teacher' 
+            st.rerun()       
     with col2:
-        st.button('Student Portal')
+        if st.button('Student Portal'):
+            st.session_state['login_type'] = 'student'
+            st.rerun()
