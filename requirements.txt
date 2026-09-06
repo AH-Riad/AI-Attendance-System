@@ -1,0 +1,18 @@
+# Utilities
+numpy
+pandas
+
+# will use for face recognition
+scikit-learn
+dlib-bin
+# detect vector points
+git+https://github.com/ageitgey/face_recognition_models
+setuptools
+
+supabase
+bcrypt
+
+segno
+pillow
+
+streamlit
