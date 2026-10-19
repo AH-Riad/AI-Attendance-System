@@ -31,7 +31,24 @@ def get_all_students():
     response = supabase.table("students").select("*").execute()
     return response.data
 
-def create_student(new_name, face_embedding = None, voice_embedding = None):
-    data = {"name":new_name, "face_embedding":face_embedding, "voice_embedding":voice_embedding }
+def create_student(name, face_embedding, voice_embedding):
+
+    data = {
+        "name": name,
+
+        "face_embedding": (
+            face_embedding.tolist()
+            if hasattr(face_embedding, "tolist")
+            else face_embedding
+        ),
+
+        "voice_embedding": (
+            voice_embedding.tolist()
+            if hasattr(voice_embedding, "tolist")
+            else voice_embedding
+        )
+    }
+
     response = supabase.table("students").insert(data).execute()
+
     return response.data
