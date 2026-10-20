@@ -3,6 +3,7 @@ from src.ui.base_layout import style_background_dashboard, style_base_layout
 from src.components.header import header_dashboard
 from src.components.footer import footer_dashboard
 from src.database.db import check_teacher_exists, create_teacher, teacher_login
+from src.components.dialog_create_subject import create_subejct_dialog
 
 def teacher_screen():
     style_background_dashboard()
@@ -76,7 +77,7 @@ def teacher_tab_manage_subjects():
         
     with col2:
         if st.button("Create New Subject", width="stretch"):
-            create_subject_dialog(teacher_id)
+            create_subejct_dialog(teacher_id)
     
         
 def teacher_tab_attendance_records():
