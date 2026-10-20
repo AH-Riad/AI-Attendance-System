@@ -69,8 +69,16 @@ def teacher_tab_take_attendance():
     st.header("Take AI Attendance")
 
 def teacher_tab_manage_subjects():
-    st.header("Manage_subjects")
+    teacher_id = st.session_state.teacher_data['teacher_id']
+    col, col2 = st.columns(2)
+    with col:
+        st.header("Manage Subjects")
+        
+    with col2:
+        if st.button("Create New Subject", width="stretch"):
+            create_subject_dialog(teacher_id)
     
+        
 def teacher_tab_attendance_records():
     st.header("Attendance records") 
     
