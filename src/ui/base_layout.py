@@ -38,40 +38,54 @@ def style_base_layout():
             @import url('https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-            /* Hide Top Bar of Streamlit */
+
+            /* Hide Streamlit Default Header and Footer */
 
             #MainMenu, footer, header {
-                visibility: hidden;
+                visibility: hidden !important;
             }
 
-            .block-container {
-                padding-top: 1.5rem !important;
+            [data-testid="stHeader"] {
+                display: none !important;
+                height: 0 !important;
             }
+
+
+            /* Fix Unnecessary Top Gap */
+
+            [data-testid="stAppViewContainer"] .block-container {
+                padding-top: 0rem !important;
+                margin-top: 0rem !important;
+            }
+
 
             /* Main Heading */
 
             h1 {
                 font-family: 'Climate Crisis', sans-serif !important;
-                font-size: 3.5rem !important;
+                font-size: 3.2rem !important;
                 line-height: 1.1 !important;
                 margin-bottom: 0rem !important;
             }
+
 
             /* Student and Teacher Headings */
 
             h2 {
                 font-family: 'Climate Crisis', sans-serif !important;
-                font-size: 2rem !important;
+                font-size: 1.8rem !important;
                 line-height: 0.9 !important;
                 margin-bottom: 0rem !important;
                 color: #000000 !important;
             }
+
 
             /* Other Text */
 
             h3, h4, p {
                 font-family: 'Outfit', sans-serif;
             }
+
 
             /* Primary Button */
 
@@ -84,6 +98,7 @@ def style_base_layout():
                 transition: transform 0.25s ease-in-out !important;
             }
 
+
             /* Secondary Button */
 
             button[kind="secondary"] {
@@ -95,6 +110,7 @@ def style_base_layout():
                 transition: transform 0.25s ease-in-out !important;
             }
 
+
             /* Tertiary Button */
 
             button[kind="tertiary"] {
@@ -105,6 +121,7 @@ def style_base_layout():
                 border: none !important;
                 transition: transform 0.25s ease-in-out !important;
             }
+
 
             /* Button Hover Effect */
 
