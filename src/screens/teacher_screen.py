@@ -98,10 +98,10 @@ def teacher_tab_manage_subjects():
             
         subject_card(
             name = sub["name"],
-            code = sub["code"],
+            code = sub["subject_code"],
             section = sub["section"],
             stats = stats,
-            footer_fallback = share_btn
+            footer_callback = share_btn
         )
     else:
         st.info("NO SUBJECTS FOUND. CREATE ONE ABOVE")            
