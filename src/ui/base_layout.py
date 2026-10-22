@@ -55,7 +55,7 @@ def style_base_layout():
 
             [data-testid="stAppViewContainer"] .block-container {
                 padding-top: 0rem !important;
-                margin-top: 0rem !important;
+                margin-top: -1rem !important;
             }
 
 
