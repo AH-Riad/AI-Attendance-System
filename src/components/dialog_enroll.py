@@ -4,12 +4,12 @@ from src.database.config import supabase
 import time
 
 
-@st.dialog("Create New Subject")
-def enroll_dialog():
+@st.dialog("Enroll in Subject")
+def enroll_dialog(student_id):
     st.write("Ente the subject code provided by your teacher to enroll")
     join_code = st.text_input('Subject Code', placeholder="Eg. CS101")
     
-    if st.button("Enroll now", type="primary", width="stretch"):
+    if st.button("Enroll now", type="primary", width="stretch", shortcut="control+enter"):
         if join_code:
             res = supabase.table("subjects").select("*").eq('subject_code', join_code).execute()
             if res.data:
